@@ -1,12 +1,11 @@
 import React from 'react';
 import withStyles, { WithSheet } from 'react-jss';
 
-import { transitionTime } from '../../constants/styles';
+import { transitionTime, colors, } from '../../constants/styles';
 
 interface IProps extends WithSheet<typeof styles, {}, {}> {
     label: string;
     to: string;
-    isActive: boolean;
     onClick: (e: React.FormEvent<HTMLAnchorElement>) => void;
 }
 
@@ -17,26 +16,23 @@ const styles = {
         display: 'inline-block',
         margin: '5px',
         padding: '4px 6px',
-        color: '#fff',
+        color: colors.white,
         textDecoration: 'none',
         fontSize: '1.15rem',
         fontWeight: 'bold',
         transition: `color, ${transitionTime}ms`,
         ['&:hover']: {
-            color: 'red',
+            color: colors.red,
             textDecoration: 'underline',
         }
-    }, 
-    ['& active']: {
-        color: 'yellow',
     }
 }
 
-const NavLink: React.SFC<IProps> = ({ to, label, onClick, classes, isActive }) => (
+const NavLink: React.SFC<IProps> = ({ to, label, onClick, classes }) => (
     <a
         href={`#${to}`}
         onClick={onClick}
-        className={`${classes['nav-link']}${isActive ? ' active' : ''}`}
+        className={`${classes['nav-link']}`}
     >
         {label}
     </a>
