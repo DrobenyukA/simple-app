@@ -50,7 +50,8 @@ const ProjectsPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ history 
         fetch(`/api/projects`)
             .then((resp) => resp.json())
             .then((result) => setProject(result as Project[]))
-            .catch(() => setProject(prMock))
+            // TODO: handle error in correct way
+            .catch((e) => console.error(e))
     }, []);
 
     if (!projects) {

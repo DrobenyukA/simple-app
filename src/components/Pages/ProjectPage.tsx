@@ -21,7 +21,8 @@ const ProjectPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ match }) 
         fetch(`/api/projects/${match.params.id}`)
             .then((resp) => resp.json())
             .then((result) => setProject(result as Project))
-            .catch(() => setProject(prMock))
+            // TODO: handle error in correct way
+            .catch((e) => console.error(e))
     }, []);
 
     if (project) {
