@@ -10,7 +10,7 @@ const HomePage: React.SFC<{}> = () => (
         <Row>
             <Col>
                 <Block>
-                    <h1>Hello World</h1>
+                    <h1>Hello World some app</h1>
                 </Block>
             </Col>
         </Row>

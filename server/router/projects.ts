@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
 const router = express.Router();
 
 const projectsDBMock = [{
@@ -34,12 +34,12 @@ const projectsDBMock = [{
 
 // TODO: use correct controller to handle response
 
-router.get("/", (req, res) => {
+router.get("/", (req: Request, res: Response) => {
     return res.json(projectsDBMock);
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", (req: Request, res: Response) => {
     return res.json(projectsDBMock.filter(project => project.id === req.params.id)[0]); 
 });
 
-module.exports = router;
+export default router;
