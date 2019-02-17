@@ -1,5 +1,3 @@
-export interface Project {
-    id: string;
-    title: string;
-    description: string;
-}
+import { IProject } from '../../../server/types/Projects';
+
+export interface Project extends IProject {}

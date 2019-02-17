@@ -19,7 +19,10 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'build', 'public'),
         compress: true,
-        port: 9000
+        port: 9000,
+        proxy: {
+            '/api': 'http://localhost:3000',
+        }
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],

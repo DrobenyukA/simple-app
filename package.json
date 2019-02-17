@@ -18,12 +18,12 @@
     "typescript": "^3.3.3"
   },
   "scripts": {
-    "build-app": "npm run build-client && npm run compile-server && npm run start-server",
+    "build": "npm run build-client && npm run compile-server",
     "build-client": "webpack --mode=production",
-    "start": "npm run",
+    "start": "npm run build && node build/app.js",
     "start-client": "webpack-dev-server --mode=development",
-    "start-server": "node build/app.js",
-    "watch-server": "nodemon build/app.js",
+    "start-server": "npm run build-client && nodemon build/app.js",
+    "start-server-as-proxy": "npm run compile-server && node build/app.js",
     "compile-server": "tsc",
     "compile-and-watch-server": "tsc -w"
   },
