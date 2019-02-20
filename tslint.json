@@ -8,7 +8,6 @@
         "interface-name": [false],
         "no-console": [false],
         "quotemark": [true, "single"],
-        "ordered-imports": false,
-    },
-    "rulesDirectory": []
+        "ordered-imports": false
+    }
 }

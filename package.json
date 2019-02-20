@@ -20,12 +20,22 @@
   "scripts": {
     "build": "npm run build-client && npm run compile-server",
     "build-client": "webpack --mode=production",
+    "compile-and-watch-server": "tsc -w",
+    "compile-server": "tsc",
+    "lint": "npm run lint-client && npm run lint-server",
+    "lint-client": "tslint --config ./client/tslint.json 'client/**/*.{ts,tsx}'",
+    "lint-server": "tslint --config tslint.json 'server/**/*.ts'",
+    "postinstall": "echo TODO: run some script after installation has finished",
+    "precommit": "lint-staged",
     "start": "npm run build && node build/app.js",
     "start-client": "webpack-dev-server --mode=development",
     "start-server": "npm run build-client && nodemon build/app.js",
     "start-server-as-proxy": "npm run compile-server && node build/app.js",
-    "compile-server": "tsc",
-    "compile-and-watch-server": "tsc -w"
+    "test": "echo TODO: run tests"
+  },
+  "lint-staged": {
+    "./client/**/*.{ts,tsx}": "tslint --config ./client/tslint.json",
+    "./server/**/*.ts": "tslint --config tslint.json"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
@@ -34,6 +44,8 @@
     "@types/node": "^11.9.4",
     "@types/react-jss": "^8.6.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
     "nodemon": "^1.18.10",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.3",
