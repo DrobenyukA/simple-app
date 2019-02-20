@@ -33,6 +33,11 @@
     "start-server-as-proxy": "npm run compile-server && node build/app.js",
     "test": "echo TODO: run tests"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "lint-staged": {
     "./client/**/*.{ts,tsx}": "tslint --config ./client/tslint.json",
     "./server/**/*.ts": "tslint --config tslint.json"
