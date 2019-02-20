@@ -13,7 +13,7 @@ const styles = {
 }
 
 const AppHeader: React.SFC<IProps> = ({ classes }) => (
-    <header className={classes["app-header"]}>
+    <header className={classes['app-header']}>
         <Navigation tag="nav" />
     </header>
 );
