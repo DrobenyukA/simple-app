@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 
 import Page from './View';
 import Row from '../Grid/Row';
@@ -40,10 +40,10 @@ const prMock: Project[] = [
         title: 'Some project-6',
         description: 'Lorem ipsum dolor sit amet.'
     }
-]
+];
 
 const ProjectsPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ history }) => {
-    const [projects, setProject] = useState<Project[]|null>(null);
+    const [projects, setProject] = useState<Project[] | null>(null);
     const clickHandler = getNavClickHandler(history);
     
     useEffect(() => {
@@ -51,7 +51,7 @@ const ProjectsPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ history 
             .then((resp) => resp.json())
             .then((result) => setProject(result as Project[]))
             // TODO: handle error in correct way
-            .catch((e) => console.error(e))
+            .catch((e) => console.error(e));
     }, []);
 
     if (!projects) {
@@ -82,6 +82,6 @@ const ProjectsPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ history 
         </Page>
     );
     
-}
+};
 
 export default ProjectsPage;
