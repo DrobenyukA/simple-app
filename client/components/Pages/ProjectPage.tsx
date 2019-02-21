@@ -6,23 +6,23 @@ import Block from '../Block/View';
 import Page from './View';
 import Loading from '../Loading/View';
 import { Project } from '../Project/types';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 
 const prMock: Project = {
     id: '1',
     title: 'Some project',
     description: 'Lorem ipsum dolor sit amet.'
-}
+};
 
 const ProjectPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ match }) => {
-    const [project, setProject] = useState<Project|null>(null);
+    const [project, setProject] = useState<Project | null>(null);
 
     useEffect(() => {
         fetch(`/api/projects/${match.params.id}`)
             .then((resp) => resp.json())
             .then((result) => setProject(result as Project))
             // TODO: handle error in correct way
-            .catch((e) => console.error(e))
+            .catch((e) => console.error(e));
     }, []);
 
     if (project) {
@@ -52,6 +52,6 @@ const ProjectPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ match }) 
             <Loading />
         </Page>
     );
-}
+};
 
 export default ProjectPage;
