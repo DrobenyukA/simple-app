@@ -2,6 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const detenv = require('dotenv-safe');
+
+detenv.load({
+    allowEmptyValues: true,
+    path: path.join(__dirname, './.env'),
+    sample: path.join(__dirname, './.env.example'),
+});
 
 module.exports = {
     entry: {
@@ -21,7 +28,7 @@ module.exports = {
         compress: true,
         port: 9000,
         proxy: {
-            '/api': 'http://localhost:3000',
+            '/api': `http://localhost:${process.env.API_HTTP_PORT}`,
         }
     },
     resolve: {
