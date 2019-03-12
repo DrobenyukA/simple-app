@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
+import Page from './View';
 import Row from '../Grid/Row';
 import Col from '../Grid/Col';
 import Block from '../Block/View';
-import Page from './View';
 import Loading from '../Loading/View';
 import { Project } from '../Project/types';
-import { RouteComponentProps } from 'react-router-dom';
-
-const prMock: Project = {
-    id: '1',
-    title: 'Some project',
-    description: 'Lorem ipsum dolor sit amet.'
-};
 
 const ProjectPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ match }) => {
     const [project, setProject] = useState<Project | null>(null);

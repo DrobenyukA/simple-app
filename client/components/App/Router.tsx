@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import { UIRoutes } from '../../constants/routes';
 import HomePage from '../Pages/Home';
-import ProjectPage from '../Pages/ProjectPage';
-import ProjectsPage from '../Pages/ProjectsPage';
+import ProjectPage from '../Pages/Project';
+import ProjectsPage from '../Pages/Projects';
 
 const AppRouter: React.SFC<{}> = ({}) => (
     <Switch>
