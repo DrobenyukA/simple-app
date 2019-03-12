@@ -25,7 +25,7 @@
         "ordered-imports": false,
         "prefer-for-of": false,
         "quotemark": [true, "single", "jsx-double"],
-        "trailing-comma": false,
+        "trailing-comma": true,
         "typedef": [
             true,
             "parameter",

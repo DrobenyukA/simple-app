@@ -10,11 +10,11 @@ const styles = {
         border: `1px solid ${colors.darkGray}`,
         borderRadius: '15px',
     }
-}
+};
 
-interface IProps extends WithSheet<typeof styles, {}, {}> {}
+interface Props extends WithSheet<typeof styles, {}, {}> {}
 
-const Block: React.SFC<IProps> = ({ classes, children }) => (
+const Block: React.SFC<Props> = ({ classes, children }) => (
     <div className={classes.block}>
         {children}
     </div>

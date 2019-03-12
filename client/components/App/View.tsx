@@ -14,11 +14,11 @@ const styles = {
         textAlign: 'center',
         backgroundColor: '#ccc',
     }
-}
+};
 
-interface IProps extends WithSheet<typeof styles, {}, {}> {}
+interface Props extends WithSheet<typeof styles, {}, {}> {}
 
-const AppView: React.SFC<IProps> = ({ classes }) => (
+const AppView: React.SFC<Props> = ({ classes }) => (
     <div className={classes.app}>
         <AppHeader />
         <Router />

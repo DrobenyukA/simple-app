@@ -1,7 +1,7 @@
 import React from 'react';
 import withStyles, { WithSheet } from 'react-jss';
 
-interface IProps extends WithSheet<typeof styles, {}, {}> {}
+interface Props extends WithSheet<typeof styles, {}, {}> {}
 
 const styles = {
     row: {
@@ -11,9 +11,9 @@ const styles = {
         justifyItems: 'space-around',
         alignItems: 'center', 
     }
-}
+};
 
-const Row: React.SFC<IProps> = ({ classes, children }) => (
+const Row: React.SFC<Props> = ({ classes, children }) => (
     <div className={classes.row}>
         {children}
     </div>

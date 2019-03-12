@@ -18,20 +18,22 @@ const HomePage: React.SFC<{}> = () => (
             <Col size={6}>
                 <Block>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugit aliquid minus consectetur maxime laudantium tempora rerum repellat in distinctio.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Est fugit aliquid minus consectetur maxime laudantium tempora rerum repellat in distinctio.
                     </p>
                 </Block>
             </Col>
             <Col size={6}>
                 <Block>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugit aliquid minus consectetur maxime laudantium tempora rerum repellat in distinctio.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Est fugit aliquid minus consectetur maxime laudantium tempora rerum repellat in distinctio.
                     </p>
                 </Block>
             </Col>
         </Row>
         
     </Page>
-)
+);
 
 export default HomePage;

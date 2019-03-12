@@ -1,3 +1,1 @@
-import { IProject } from '../../../server/types/Projects';
-
-export interface Project extends IProject {}
+export { Project } from '../../../server/types/Projects';

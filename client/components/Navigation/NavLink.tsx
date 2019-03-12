@@ -3,7 +3,7 @@ import withStyles, { WithSheet } from 'react-jss';
 
 import { transitionTime, colors, } from '../../constants/styles';
 
-interface IProps extends WithSheet<typeof styles, {}, {}> {
+interface Props extends WithSheet<typeof styles, {}, {}> {
     label: string;
     to: string;
     onClick: (e: React.FormEvent<HTMLAnchorElement>) => void;
@@ -26,9 +26,9 @@ const styles = {
             textDecoration: 'underline',
         }
     }
-}
+};
 
-const NavLink: React.SFC<IProps> = ({ to, label, onClick, classes }) => (
+const NavLink: React.SFC<Props> = ({ to, label, onClick, classes }) => (
     <a
         href={`#${to}`}
         onClick={onClick}
@@ -36,6 +36,6 @@ const NavLink: React.SFC<IProps> = ({ to, label, onClick, classes }) => (
     >
         {label}
     </a>
-)
+);
 
 export default withStyles(styles)(NavLink);

@@ -4,12 +4,12 @@ import Row from '../Grid/Row';
 import Col from '../Grid/Col';
 import Block from '../Block/View';
 
-interface IProps {
+interface Props {
     title: string;
     description: string;
 }
 
-const Project: React.SFC<IProps> = ({ title, description }) => (
+const Project: React.SFC<Props> = ({ title, description }) => (
     <>
         <Row>
             <Col>
