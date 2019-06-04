@@ -48,10 +48,10 @@ const ProjectsPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ history 
     
     useEffect(() => {
         fetch(`/api/projects`)
-            .then((resp) => resp.json())
-            .then((result) => setProject(result as Project[]))
+            .then((resp: Response) => resp.json())
+            .then((result: Project[]) => setProject(result))
             // TODO: handle error in correct way
-            .catch((e) => console.error(e));
+            .catch((e: Error) => console.error(e));
     }, []);
 
     if (!projects) {

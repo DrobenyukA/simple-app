@@ -13,10 +13,10 @@ const ProjectPage: React.SFC<RouteComponentProps<{ id: string }>> = ({ match }) 
 
     useEffect(() => {
         fetch(`/api/projects/${match.params.id}`)
-            .then((resp) => resp.json())
-            .then((result) => setProject(result as Project))
+            .then((resp: Response) => resp.json())
+            .then((result: Project) => setProject(result))
             // TODO: handle error in correct way
-            .catch((e) => console.error(e));
+            .catch((e: Error) => console.error(e));
     }, []);
 
     if (project) {
