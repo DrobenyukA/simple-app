@@ -33,6 +33,7 @@ jobs:
       with:
         envkey_DEBUG: false
         envkey_PORT: 8080
+        envkey_API_HTTP_PORT: 8080
         fail_on_empty: false
         sort_keys: false
     
