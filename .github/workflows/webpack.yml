@@ -20,7 +20,7 @@ jobs:
 
     - name: Test app
       run: |
-        npm install
+        npm ci
         echo Tests run sucessfuly
         # npm run test
           
@@ -44,7 +44,7 @@ jobs:
     - name: Build
       run: echo Build was successful
       # run: |
-      #   npm install
+      #   npm ci
       #   npm run build
 
   deploy:
